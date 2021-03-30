@@ -105,9 +105,7 @@ Public Class StansGroceryForm
         Else
 
             'If a match was found then fill out the item name, aisle name, and category to the display label
-            DisplayLabel.Text = food(selectedItemNumber, 0) &
-                                " can be found in aisle " & food(selectedItemNumber, 1) &
-                                " with the " & food(selectedItemNumber, 2)
+            WriteToDisplayLabel(selectedItemNumber)
 
         End If
 
@@ -169,15 +167,22 @@ Public Class StansGroceryForm
         Next
 
         'Fill out the item name, aisle name, and category to the display label
-        DisplayLabel.Text = food(selectedItemNumber, 0) &
-                            " can be found in aisle " & food(selectedItemNumber, 1) &
-                            " with the " & food(selectedItemNumber, 2)
+        WriteToDisplayLabel(selectedItemNumber)
 
     End Sub
 
     Sub UpdateDisplayListBox() Handles FilterComboBox.SelectedIndexChanged
 
         DisplayListOnCategory(FilterComboBox.SelectedItem.ToString) 'Update the item list box to only display the selected category
+
+    End Sub
+
+    Sub WriteToDisplayLabel(selectedItemNumber As Integer)
+
+        'Fill out the item name, aisle name, and category to the display label
+        DisplayLabel.Text = food(selectedItemNumber, 0) &
+                            " can be found in aisle " & food(selectedItemNumber, 1) &
+                            " with the " & food(selectedItemNumber, 2)
 
     End Sub
 
