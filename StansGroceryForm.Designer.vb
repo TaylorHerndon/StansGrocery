@@ -40,6 +40,7 @@ Partial Class StansGroceryForm
         Me.ContextMenuStripA = New System.Windows.Forms.ContextMenuStrip(Me.components)
         Me.SearchToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.ExitToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ToolTipMain = New System.Windows.Forms.ToolTip(Me.components)
         Me.TopMenuStrip.SuspendLayout()
         Me.LeftGroupBox.SuspendLayout()
         Me.ContextMenuStripA.SuspendLayout()
@@ -66,13 +67,13 @@ Partial Class StansGroceryForm
         'SearchToolStripMenuItem
         '
         Me.SearchToolStripMenuItem.Name = "SearchToolStripMenuItem"
-        Me.SearchToolStripMenuItem.Size = New System.Drawing.Size(166, 34)
+        Me.SearchToolStripMenuItem.Size = New System.Drawing.Size(270, 34)
         Me.SearchToolStripMenuItem.Text = "&Search"
         '
         'ExitToolStripMenuItem
         '
         Me.ExitToolStripMenuItem.Name = "ExitToolStripMenuItem"
-        Me.ExitToolStripMenuItem.Size = New System.Drawing.Size(166, 34)
+        Me.ExitToolStripMenuItem.Size = New System.Drawing.Size(270, 34)
         Me.ExitToolStripMenuItem.Text = "&Exit"
         '
         'HelpTopMenuItem
@@ -97,6 +98,7 @@ Partial Class StansGroceryForm
         Me.SearchTextBox.Name = "SearchTextBox"
         Me.SearchTextBox.Size = New System.Drawing.Size(614, 26)
         Me.SearchTextBox.TabIndex = 1
+        Me.ToolTipMain.SetToolTip(Me.SearchTextBox, "Type your desired item here")
         '
         'FilterComboBox
         '
@@ -108,6 +110,7 @@ Partial Class StansGroceryForm
         Me.FilterComboBox.Name = "FilterComboBox"
         Me.FilterComboBox.Size = New System.Drawing.Size(325, 28)
         Me.FilterComboBox.TabIndex = 2
+        Me.ToolTipMain.SetToolTip(Me.FilterComboBox, "Select a category to filter your search")
         '
         'DisplayListBox
         '
@@ -118,6 +121,7 @@ Partial Class StansGroceryForm
         Me.DisplayListBox.Name = "DisplayListBox"
         Me.DisplayListBox.Size = New System.Drawing.Size(434, 384)
         Me.DisplayListBox.TabIndex = 3
+        Me.ToolTipMain.SetToolTip(Me.DisplayListBox, "Choose from a selection of items")
         '
         'LookUpLabel
         '
@@ -147,6 +151,7 @@ Partial Class StansGroceryForm
         Me.SearchButton.Size = New System.Drawing.Size(147, 31)
         Me.SearchButton.TabIndex = 6
         Me.SearchButton.Text = "&Search"
+        Me.ToolTipMain.SetToolTip(Me.SearchButton, "Click or press enter to search for your item")
         Me.SearchButton.UseVisualStyleBackColor = True
         '
         'LeftGroupBox
@@ -233,4 +238,5 @@ Partial Class StansGroceryForm
     Friend WithEvents ContextMenuStripA As ContextMenuStrip
     Friend WithEvents SearchToolStripMenuItem1 As ToolStripMenuItem
     Friend WithEvents ExitToolStripMenuItem1 As ToolStripMenuItem
+    Friend WithEvents ToolTipMain As ToolTip
 End Class

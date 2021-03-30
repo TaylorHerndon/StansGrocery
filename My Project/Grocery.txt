@@ -254,4 +254,4 @@
 "$$ITMLight bulbs","##LOC15","%%CATOther stuff"
 "$$ITMNewspaper / Magazine","##LOC15","%%CATOther stuff"
 "$$ITMRandom impulse buy","##LOC15","%%CATOther stuff"
-"$$ITMPogChamp","##LOC-1","%%CATThe Gamer Gear"
+"$$ITMPogChamp","##LOC99","%%CATThe Gamer Gear"

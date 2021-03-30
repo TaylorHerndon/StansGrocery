@@ -11,6 +11,7 @@ Public Class StansGroceryForm
 
     Dim temp(999) As String
     Dim food(999, 2) As String
+
     Sub StartupProcesses() Handles Me.Load
 
         temp = Split(StansGrocery.My.Resources.Grocery, vbLf, -1)
