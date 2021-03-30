@@ -28,6 +28,24 @@ Public Class StansGroceryForm
             'Index the food category
             food(i, 2) = temp(i).Substring(temp(i).LastIndexOf(",") + 7, temp(i).Length - temp(i).LastIndexOf(",") - 8)
 
+            If food(i, 0) = "" Then
+
+                food(i, 0) = "<Item not found>" 'If selected food name is empty then subsitute <Item not found>
+
+            End If
+
+            If food(i, 1) = "" Then
+
+                food(i, 1) = "<Location not found>" 'If selected aisle is empty then subsitute <Location not found>
+
+            End If
+
+            If food(i, 2) = "" Then
+
+                food(i, 2) = "<Category not found>" 'If selected category is empty then subsitute <Category not found>
+
+            End If
+
         Next
 
         'Add each unique category to the filter combo box
