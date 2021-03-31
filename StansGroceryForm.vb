@@ -48,16 +48,8 @@ Public Class StansGroceryForm
 
         Next
 
-        'Add each unique category to the filter combo box
-        For i = 0 To temp.Length - 1
-
-            If Not FilterComboBox.Items.Contains(food(i, 2)) And food(i, 2) <> "" Then
-
-                FilterComboBox.Items.Add(food(i, 2))
-
-            End If
-
-        Next
+        'Set the filter type to default which is by category
+        FilterCategoryRadioButton.Checked = True
 
         FilterComboBox.Items.Add("All Items") 'Add "All Items" to the filter combo box
         FilterComboBox.Sorted = True 'Sort the filter combo box by alphabetical order
@@ -133,12 +125,19 @@ Public Class StansGroceryForm
 
         End If
 
+        'Set the search process to search either categories or aisles
+        Dim searchThisIndex As Integer = 2
 
+        If FilterAisleRadioButton.Checked Then
+
+            searchThisIndex = 1
+
+        End If
 
         For i = 0 To temp.Length
 
             'Add all of the items with the selected category to the item list box
-            If food(i, 0) <> "" And food(i, 2) = category Then
+            If food(i, 0) <> "" And food(i, searchThisIndex) = category Then
 
                 DisplayListBox.Items.Add(food(i, 0))
 
@@ -147,6 +146,57 @@ Public Class StansGroceryForm
             DisplayListBox.Sorted = True 'Sort the item list by alphabetical order
 
         Next
+
+    End Sub
+
+    Sub SetFilterType()
+
+        FilterComboBox.Items.Clear()
+
+        If FilterCategoryRadioButton.Checked Then
+
+            'Add each unique category to the filter combo box
+            For i = 0 To temp.Length - 1
+
+                If Not FilterComboBox.Items.Contains(food(i, 2)) And food(i, 2) <> "" Then
+
+                    FilterComboBox.Items.Add(food(i, 2))
+
+                End If
+
+            Next
+
+            FilterComboBox.Items.Add("All Items")
+            FilterComboBox.Sorted = True
+
+        Else
+
+            'Add each unique aisle to the filter combo box
+            FilterComboBox.Sorted = False
+            FilterComboBox.Items.Add("All Items")
+
+            For i = 0 To 99
+
+                For i2 = 0 To temp.Length - 1
+
+                    If food(i2, 1) = CStr(i) Then
+
+                        FilterComboBox.Items.Add(CStr(i))
+                        Exit For
+
+                    End If
+
+                Next
+
+            Next
+
+        End If
+
+    End Sub
+
+    Sub RadioButtonPressed() Handles FilterCategoryRadioButton.CheckedChanged, FilterAisleRadioButton.CheckedChanged
+
+        SetFilterType() 'Evaluate the filter type if either radio button was pressed
 
     End Sub
 
@@ -202,5 +252,6 @@ Public Class StansGroceryForm
         End
 
     End Sub
+
 
 End Class
