@@ -23,6 +23,7 @@ Partial Class StansGroceryForm
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(StansGroceryForm))
         Me.TopMenuStrip = New System.Windows.Forms.MenuStrip()
         Me.FileTopMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.SearchToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -44,6 +45,7 @@ Partial Class StansGroceryForm
         Me.FilterGroupBox = New System.Windows.Forms.GroupBox()
         Me.FilterAisleRadioButton = New System.Windows.Forms.RadioButton()
         Me.FilterCategoryRadioButton = New System.Windows.Forms.RadioButton()
+        Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.TopMenuStrip.SuspendLayout()
         Me.LeftGroupBox.SuspendLayout()
         Me.ContextMenuStripA.SuspendLayout()
@@ -242,6 +244,7 @@ Partial Class StansGroceryForm
         Me.Controls.Add(Me.FilterComboBox)
         Me.Controls.Add(Me.SearchTextBox)
         Me.Controls.Add(Me.TopMenuStrip)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MainMenuStrip = Me.TopMenuStrip
         Me.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.Name = "StansGroceryForm"
@@ -279,4 +282,5 @@ Partial Class StansGroceryForm
     Friend WithEvents FilterGroupBox As GroupBox
     Friend WithEvents FilterCategoryRadioButton As RadioButton
     Friend WithEvents FilterAisleRadioButton As RadioButton
+    Friend WithEvents Timer1 As Timer
 End Class
